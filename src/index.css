@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-maroon: 119 29 29;
+    --color-silver: 203 213 225;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0d0205;
+    color: #f1f5f9;
+    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #140206;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #94a3b8 0%, #771d1d 100%);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+}
+
+@layer utilities {
+  .text-glow-silver {
+    text-shadow: 0 0 20px rgba(226, 232, 240, 0.45), 0 0 40px rgba(226, 232, 240, 0.2);
+  }
+  .text-glow-maroon {
+    text-shadow: 0 0 20px rgba(185, 28, 28, 0.6), 0 0 40px rgba(185, 28, 28, 0.3);
+  }
+  .box-glow-silver {
+    box-shadow: 0 0 30px -5px rgba(226, 232, 240, 0.2), 0 0 15px -3px rgba(226, 232, 240, 0.1);
+  }
+  .box-glow-maroon {
+    box-shadow: 0 0 30px -5px rgba(119, 29, 29, 0.4), 0 0 15px -3px rgba(119, 29, 29, 0.2);
+  }
+  .glass-card {
+    background: linear-gradient(135deg, rgba(48, 8, 14, 0.65) 0%, rgba(18, 3, 6, 0.8) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.14);
+  }
+  .glass-card-hover {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass-card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgba(226, 232, 240, 0.35);
+    box-shadow: 0 15px 35px -10px rgba(119, 29, 29, 0.5), 0 0 25px -5px rgba(226, 232, 240, 0.18);
+  }
+  .glass-pill {
+    background: rgba(45, 8, 14, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.18);
+  }
+  .gradient-silver-text {
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 45%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-maroon-silver-text {
+    background: linear-gradient(135deg, #ffffff 0%, #fca5a5 45%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Organic Blob Animation */
+@keyframes morphShape {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+.organic-blob {
+  animation: morphShape 12s ease-in-out infinite alternate;
+}
